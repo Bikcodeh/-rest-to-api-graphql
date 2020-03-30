@@ -3,17 +3,10 @@ import { LIST } from "./resolversMap";
 
 const query: IResolvers = {
     Query: {
-        hello(): string {
-            return 'Hello world!!';
-        },
-        helloWithName(_: void, args: any): string {
-            return `Hello ${args.name}!!`;
-        },
-        helloToGraphQLCourse(): string {
-            return 'Hello to GraphQL Course!!';
-        },
-        list() {
-            return LIST;
+        async seasonList(_: void, __: any, { dataSources } ) {
+            return await dataSources.seasons.getSeasons().then(
+                (data: any) => data.MRData.SeasonTable.Seasons
+            );
         }
     }
 }
