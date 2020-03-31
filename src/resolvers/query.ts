@@ -21,6 +21,11 @@ const query: IResolvers = {
             return await dataSources.drivers.getDrivers(pageElements, page).then(
                 (data: any) => data.MRData.DriverTable.Drivers
             );
+         },
+         async driversYear(_: void, { year }, { dataSources }){
+            return await dataSources.drivers.getDriversByYear(year).then(
+                (data: any) => data.MRData.DriverTable.Drivers
+            );
          }
     }
 }
