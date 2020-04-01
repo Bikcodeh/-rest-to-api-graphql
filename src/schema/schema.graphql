@@ -7,6 +7,7 @@ type Query {
     driversYearAndRound(year: String!, round: Int!): [Driver!]!
     driverById(id: String!): Driver
     seasonPilotRanking(year: String!): [DriverStanding!]!
+    circuitList: [Circuit!]!
 }
 
 type Mutation {

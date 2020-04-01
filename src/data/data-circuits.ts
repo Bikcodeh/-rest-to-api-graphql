@@ -5,9 +5,9 @@ export class CircuitsData extends F1{
         super();
     }
 
-    /* async getSeasons() {
-        return await this.get('seasons.json?limit?=80', {
+    async getCircuits() {
+        return await this.get('circuits.json?limit?=80', {
             cacheOptions: { ttl: 60 }
         });
-    } */
+    }
 }

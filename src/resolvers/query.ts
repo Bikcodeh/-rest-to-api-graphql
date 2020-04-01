@@ -41,6 +41,11 @@ const query: IResolvers = {
             return await dataSources.drivers.getSeasonsPilotRankind(year).then(
                 (data: any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings
             );
+        },
+        async circuitList(_: void, __: void, { dataSources }){
+            return await dataSources.circuits.getCircuits().then(
+                (data: any) => data.MRData.CircuitTable.Circuits
+            );
         }
 
     }

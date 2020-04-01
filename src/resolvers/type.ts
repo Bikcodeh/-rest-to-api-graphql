@@ -27,7 +27,7 @@ const type: IResolvers = {
     DriverStanding: {
         driver: parent => parent.Driver,
         constructors: parent => parent.Constructors
-    }
+    },
 }
 
 export default type;
