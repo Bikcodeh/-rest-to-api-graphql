@@ -23,6 +23,10 @@ const type: IResolvers = {
     Driver: {
         id: parent => parent.driverId,
         name: parent => `${parent.givenName} ${parent.familyName}`
+    },
+    DriverStanding: {
+        driver: parent => parent.Driver,
+        constructors: parent => parent.Constructors
     }
 }
 
